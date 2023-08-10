@@ -1,16 +1,15 @@
-function humanReadable(seconds) {
-  const hours = Math.floor(seconds / 3600);
-  const minutes = Math.floor((seconds % 3600) / 60);
-  const secs = seconds % 60;
+function solution(str) {
+  const result = [];
 
-  const formattedTime = [
-    hours.toString().padStart(2, '0'),
-    minutes.toString().padStart(2, '0'),
-    secs.toString().padStart(2, '0')
-  ].join(':');
+  for (let i = 0; i < str.length; i += 2) {
+    if (i + 1 < str.length) {
+      result.push(str.slice(i, i + 2));
+    } else {
+      result.push(str[i] + '_');
+    }
+  }
 
-  return formattedTime;
+  return result;
 }
 
-
-humanReadable(6376464)
+solution(akrbkss)
