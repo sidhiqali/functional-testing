@@ -1,16 +1,16 @@
+function humanReadable(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
 
-const prepareTea = () => 'greenTea';
+  const formattedTime = [
+    hours.toString().padStart(2, '0'),
+    minutes.toString().padStart(2, '0'),
+    secs.toString().padStart(2, '0')
+  ].join(':');
+
+  return formattedTime;
+}
 
 
-const getTea = (numOfCups) => {
-  const teaCups = [];
-
-  for(let cups = 1; cups <= numOfCups; cups += 1) {
-    const teaCup = prepareTea();
-    teaCups.push(teaCup);
-  }
-  return teaCups;
-};
-
-
-const tea4TeamFCC = getTea(40);
+humanReadable(6376464)
